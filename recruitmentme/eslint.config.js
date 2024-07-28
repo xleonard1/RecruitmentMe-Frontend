@@ -1,7 +1,7 @@
 export default [
-    {
-        rules: {
-            "no-useless-return": "warning",
-        }
-    }
+  {
+    rules: {
+      "no-useless-return": "warning",
+    },
+  },
 ];
