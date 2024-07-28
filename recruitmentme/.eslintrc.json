@@ -1,8 +1,44 @@
 {
-    "extends": [
-      "next/core-web-vitals",
-      "some-other-config-you-use",
-      "prettier"
-    ]
-  
+  "extends": [
+    "next/core-web-vitals",
+    "prettier",
+    "eslint:recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:prettier/recommended"
+  ],
+  "plugins": ["@typescript-eslint"],
+  "parser": "@typescript-eslint/parser",
+  "rules": {
+    "no-html-link-for-pages": [
+      "error",
+      {
+        "pagesDir": "src/pages" // Adjust this to your actual pages directory
+      }
+    ],
+    "@typescript-eslint/await-thenable": "error",
+    "@typescript-eslint/ban-types": "error",
+    "@typescript-eslint/no-base-to-string": "error",
+    "@typescript-eslint/no-duplicate-enum-values": "error",
+    "@typescript-eslint/no-duplicate-type-constituents": "error",
+    "@typescript-eslint/no-explicit-any": "error",
+    "@typescript-eslint/no-extra-non-null-assertion": "error",
+    "@typescript-eslint/no-floating-promises": "error",
+    "no-implied-eval": "off",
+    "@typescript-eslint/no-implied-eval": "error",
+    "@typescript-eslint/no-misused-new": "error",
+    "@typescript-eslint/no-unsafe-call": "error"
+  },
+  "overrides": [
+    {
+      "files": ["*.ts", "*.tsx"],
+      "parserOptions": {
+        "project": "./tsconfig.json"
+      },
+      "rules": {
+        // Add TypeScript-specific rules here if needed
+      }
+    }
+  ]
 }
+
+
