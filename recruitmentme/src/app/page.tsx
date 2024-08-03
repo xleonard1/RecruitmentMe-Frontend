@@ -3,6 +3,8 @@
 import {Box, Stack, TextField, Typography } from "@mui/material"
 import React from "react";
 import SignUpForm from "./Components/forms/SignUpForm";
+import temporaryImage from './../../public/images/temporaryAppImage.jpg'
+
 
 export default function Home() {
   return (
@@ -40,7 +42,10 @@ export default function Home() {
               ml={5}
               width="100%" 
               sx={{
-              backgroundColor: "#F5F5DC",
+              backgroundImage: 'url(/images/temporaryAppImage.jpg)',
+              backgroundRepeat: 'no-repeat',
+             backgroundPosition:'center',
+             backgroundSize: 'cover',
               borderRadius: 10,
               }}>
             
