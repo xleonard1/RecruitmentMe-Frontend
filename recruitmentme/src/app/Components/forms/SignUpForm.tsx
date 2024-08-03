@@ -2,7 +2,9 @@ import { Box, Button, Stack, TextField, Typography } from '@mui/material';
 import {Form, Formik, useFormikContext } from 'formik'
 import React from "react";
 import FormFieldTextInput from './formInputs/FormFieldTextInput';
+import FormFieldSelectInput from './formInputs/FomFieldSelectInput';
 
+type Role = "APPLICANT" | "RECRUITER"
 interface ICreateAccountFormValues {
   firstName: string;
   lastName: string;
@@ -16,7 +18,11 @@ const SignUpForm = () => {
     lastName: '',
     role: ''
   } 
-  
+  const roleSectionTransformation: Record<Role, string> = {
+    APPLICANT: "Applicant",
+    RECRUITER: "Recruiter"
+  }
+  const roleSelectionMenuOptions = [ roleSectionTransformation.APPLICANT, roleSectionTransformation.RECRUITER]
 
   const onSubmitSignup = (values: ICreateAccountFormValues ) => {
     console.log(values.firstName, values.lastName, values.role)
@@ -47,9 +53,10 @@ const SignUpForm = () => {
           label="Last Name"
           name="lastName"
           />
-          <FormFieldTextInput
-          label="Role"
-          name="role" 
+          <FormFieldSelectInput 
+          name={"Role"} 
+          label={"Role"} 
+          values={roleSelectionMenuOptions}
           />
         </Stack>
         <Button 

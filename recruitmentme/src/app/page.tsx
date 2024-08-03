@@ -8,7 +8,7 @@ import temporaryImage from './../../public/images/temporaryAppImage.jpg'
 
 export default function Home() {
   return (
-      <Box  height="100vh" sx={{backgroundColor: "#F0FFFF"}} position="relative">
+      <Stack height="100vh" sx={{backgroundColor: "#F0FFFF"}} position="relative">
         <Typography 
           position="absolute"
           fontSize={30}
@@ -23,7 +23,7 @@ export default function Home() {
           >
           RealHire
         </Typography>
-        <Box p={5} height="100%">
+        <Stack p={5} height="100%">
           <Stack height="100%" direction={"row"} justifyContent={"space-between"}>
             <Box  
               width="100%"
@@ -52,7 +52,7 @@ export default function Home() {
             
             </Box>
           </Stack>
-        </Box>
-      </Box>
+        </Stack>
+      </Stack>
   );
 }
