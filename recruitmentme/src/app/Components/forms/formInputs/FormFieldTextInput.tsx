@@ -22,6 +22,7 @@ const FormFieldTextInput  = ({
             error={meta.touched && Boolean(meta.error)}
             helperText={meta.touched && meta.error} 
             sx={{
+                color: "blue",
                 width: 400,
                 py: 2
             }}

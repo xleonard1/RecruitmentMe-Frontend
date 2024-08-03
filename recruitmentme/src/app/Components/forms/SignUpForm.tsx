@@ -30,7 +30,7 @@ const SignUpForm = () => {
     {({values}) => (
       <Stack spacing={2}>
         <Box width="100%">
-        <Typography variant='h4'>
+        <Typography variant='h4' color="blue">
            Create an Account
         </Typography>
         <Typography>

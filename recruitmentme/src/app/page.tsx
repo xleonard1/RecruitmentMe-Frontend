@@ -14,6 +14,7 @@ export default function Home() {
           fontSize={30}
           fontWeight={600}
           sx={{
+            color: "blue",
             position: "absolute", 
             top: 20, // Adjust as needed
             left: 20, // Adjust as needed
