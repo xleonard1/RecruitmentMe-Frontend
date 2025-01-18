@@ -12,7 +12,8 @@ undefined
     name: string;
     label: ReactNode;
     values: T[];
-} & Omit<SelectProps, 'value' | 'onChange'>;
+    onChange:(value: T) => void;
+} & Omit<SelectProps, 'value' | 'onChange' >;
 
 const FormFieldSelectInput = <
 T extends 
@@ -24,9 +25,11 @@ undefined
     name,
     values,
     label,
+    onChange,
     ...selectProps
 }: FormFieldSelectInput<T>) => {
     const [field, meta ] = useField(name);
+   
     return (
         <>
             <Select
@@ -36,6 +39,8 @@ undefined
             error={meta.touched && Boolean(meta.error)}
             variant="standard"
             sx={{my:2}}
+            onChange={onChange}
+            {...selectProps}
             >
             {values.map(((value, index) => (
                    <MenuItem key={index} value={value}>

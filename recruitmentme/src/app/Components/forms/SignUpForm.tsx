@@ -12,6 +12,7 @@ interface ICreateAccountFormValues {
 }
 
 const SignUpForm = () => {
+  const {setValues}= useFormikContext<ICreateAccountFormValues>()
 
   const initialFormValues: ICreateAccountFormValues = {
     firstName: '',
@@ -23,6 +24,11 @@ const SignUpForm = () => {
     RECRUITER: "Recruiter"
   }
   const roleSelectionMenuOptions = [ roleSectionTransformation.APPLICANT, roleSectionTransformation.RECRUITER]
+  const onRoleSelectionChange = () => {
+    return setValues((vaues) => ({
+
+    }))
+  }
 
   const onSubmitSignup = (values: ICreateAccountFormValues ) => {
     console.log(values.firstName, values.lastName, values.role)
@@ -57,6 +63,8 @@ const SignUpForm = () => {
           name={"Role"} 
           label={"Role"} 
           values={roleSelectionMenuOptions}
+          
+        
           />
         </Stack>
         <Button 
